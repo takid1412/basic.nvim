@@ -18,4 +18,5 @@ opt.clipboard = "unnamedplus"
 
 opt.hlsearch = false
 opt.incsearch = true
-opt.iccommand = true
+
+opt.smartindent = true

@@ -23,16 +23,13 @@ require("config.autocmds")
 require("lazy").setup({
     spec = {
         {
-            "folke/tokyonight.nvim",
+            "xiantang/darcula-dark.nvim",
             lazy = false,  -- Load immediately
             priority = 1000,  -- Load before other plugins
             config = function()
-                require("tokyonight").setup({
-                    style = "night", -- Options: "storm", "moon", "night", "day"
-                    transparent = false,
-                    terminal_colors = true,
+                require("darcula").setup({
                 })
-                vim.cmd("colorscheme tokyonight")
+                vim.cmd("colorscheme darcula-dark")
             end,
         },
         --{ "LazyVim/LazyVim", import = "lazyvim.plugins" }
