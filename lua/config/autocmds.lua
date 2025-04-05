@@ -1,3 +1,4 @@
+-- openresty syntax
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = {"/etc/nginx/**.conf"},
   command = "set filetype=nginx"
@@ -10,6 +11,9 @@ vim.api.nvim_create_autocmd("FileType", {
     ]])
   end
 })
+
+
+-- UI padding fix
 vim.api.nvim_create_autocmd({'UIEnter', 'ColorScheme'}, {
     callback = function()
         local normal = vim.api.nvim_get_hl(0, { name = 'Normal' })
@@ -23,4 +27,11 @@ vim.api.nvim_create_autocmd('UILeave', {
     callback = function()
         io.write('\027]111\027\\')
     end,
+})
+
+
+-- iptables syntax
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*/iptables/*", "**iptables", "*/ip6tables/*", "*ip6tables*"},
+    callback = function() vim.bo.filetype = "iptables" end
 })
